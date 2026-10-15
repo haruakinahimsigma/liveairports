@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>Airport Live — Global Airport Cameras</title>
+<style>
+:root{color-scheme:dark;--bg:#07111f;--panel:#0d1a2b;--panel2:#112238;--line:#1e344d;--text:#edf5ff;--muted:#91a8c2;--cyan:#56d7ff;--green:#57e3a2;--amber:#ffca78}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 78% -15%,#12365b 0,transparent 42%),var(--bg);color:var(--text);font:15px/1.5 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}button,input{font:inherit}button{cursor:pointer}.shell{max-width:1440px;margin:auto;padding:22px}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:8px 0 25px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#62dcff,#287cff);color:#041321;font-size:23px;box-shadow:0 7px 30px #168dd333}.brand h1{font-size:19px;letter-spacing:.02em;margin:0}.brand p{margin:1px 0 0;color:var(--muted);font-size:12px}.status{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:12px}.dot{height:8px;width:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px #57e3a288}.hero{padding:34px 0 25px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}.eyebrow{color:var(--cyan);font-size:11px;letter-spacing:.18em;font-weight:800;text-transform:uppercase}.hero h2{font-size:clamp(28px,4vw,45px);line-height:1.06;letter-spacing:-.04em;margin:9px 0 12px;max-width:700px}.hero h2 span{color:var(--cyan)}.hero p{color:var(--muted);max-width:600px;margin:0}.search{display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:0 14px;min-width:min(100%,280px);height:48px}.search input{background:transparent;border:0;outline:0;color:var(--text);width:100%;min-width:0}.search input::placeholder{color:#7189a5}.layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,.8fr);gap:18px}.panel{background:linear-gradient(145deg,#0e1d30,#0a1727);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 19px;border-bottom:1px solid var(--line)}.panel-head h3{font-size:14px;margin:0}.sub{font-size:11px;color:var(--muted);margin-top:3px}.tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;border:1px solid #28583f;background:#102d26;color:var(--green);padding:5px 8px;border-radius:7px;white-space:nowrap}.video{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#0a2137,#07111f);display:grid;place-items:center}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.video-placeholder{display:none;text-align:center;padding:28px;max-width:430px}.video-placeholder .big{font-size:38px}.video-placeholder h4{margin:12px 0 5px;font-size:17px}.video-placeholder p{color:var(--muted);font-size:13px}.video-placeholder button,.btn{border:1px solid #285d7b;background:#12344c;color:#bceeff;border-radius:10px;padding:10px 13px;font-weight:700}.stream-meta{display:flex;justify-content:space-between;gap:14px;padding:15px 18px;align-items:center}.stream-meta h4{margin:0;font-size:16px}.stream-meta p{margin:4px 0 0;color:var(--muted);font-size:12px}.stream-actions{display:flex;gap:8px;flex-wrap:wrap}.section-title{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:26px 0 12px}.section-title h3{font-size:16px;margin:0}.section-title span{color:var(--muted);font-size:12px}.airport-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.airport{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:15px;display:flex;gap:12px;align-items:flex-start;transition:.18s}.airport:hover{border-color:#3d7197;transform:translateY(-1px)}.airport-icon{width:42px;height:42px;flex:0 0 42px;border-radius:12px;background:#122b43;display:grid;place-items:center;font-size:21px}.airport h4{margin:0;font-size:14px}.code{font-size:10px;color:var(--cyan);font-weight:800;letter-spacing:.1em}.airport p{margin:5px 0 0;color:var(--muted);font-size:12px}.airport .tiny{display:inline-block;margin-top:9px;color:#b4c8dd;font-size:10px;border:1px solid var(--line);padding:3px 6px;border-radius:5px}.side-content{padding:17px}.map{min-height:235px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 50%,#153c58 0,#0b1d31 65%,#081423 100%);border-radius:12px;border:1px solid #1a3852}.map svg{position:absolute;width:100%;height:100%;inset:0}.map-label{position:absolute;font-size:10px;color:#aac4db;background:#0a1b2bdc;border:1px solid #294966;padding:4px 6px;border-radius:5px}.pin{position:absolute;width:9px;height:9px;border:2px solid #fff;background:var(--cyan);border-radius:50%;box-shadow:0 0 0 5px #56d7ff25}.pin.lax{left:17%;top:42%}.pin.jfk{left:28%;top:36%}.pin.lhr{left:49%;top:27%}.pin.sin{left:76%;top:62%}.pin.hnd{left:84%;top:42%}.map-label.lax{left:9%;top:47%}.map-label.jfk{left:29%;top:39%}.map-label.lhr{left:48%;top:17%}.map-label.sin{left:70%;top:68%}.map-label.hnd{left:79%;top:32%}.map-caption{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:10px}.info{margin-top:14px;border:1px solid #29405b;background:#0c1b2d;border-radius:12px;padding:13px}.info h4{font-size:12px;margin:0 0 6px}.info p{color:var(--muted);font-size:12px;margin:0}.source-note{margin-top:14px;color:#8199b3;font-size:11px;line-height:1.6}.footer{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:25px 0;color:#7189a5;font-size:11px}.empty{grid-column:1/-1;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:22px;text-align:center}.hidden{display:none!important}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.hero{align-items:stretch;flex-direction:column}.search{min-width:0;width:100%}.side-content{padding:14px}}@media(max-width:520px){.shell{padding:14px}.status{display:none}.airport-list{grid-template-columns:1fr}.panel-head{padding:14px}.stream-meta{align-items:flex-start;flex-direction:column}.hero{padding-top:27px}.hero h2{font-size:32px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="topbar">
+  <div class="brand"><div class="logo">✈</div><div><h1>AIRPORT <span style="color:var(--cyan)">LIVE</span></h1><p>Global airport camera network · v0.1</p></div></div>
+  <div class="status"><span class="dot"></span> DASHBOARD ONLINE <span style="color:#405974">/</span> LIVE PLAYER MAY VARY</div>
+</header>
+<section class="hero">
+  <div><div class="eyebrow">Your window to the world's airports</div><h2>Airports never sleep.<br><span>Watch the world move.</span></h2><p>Explore airport cameras, discover international hubs, and keep your favorite runways one click away.</p></div>
+  <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search airport, city, or IATA code…" autocomplete="off" aria-label="Search airports"></label>
+</section>
+<div class="layout">
+  <main>
+    <section class="panel">
+      <div class="panel-head"><div><h3>FEATURED CAMERA</h3><div class="sub">LOS ANGELES INTERNATIONAL · CALIFORNIA, USA</div></div><span class="tag">▶ YouTube feed</span></div>
+      <div class="video" id="videoWrap">
+        <iframe id="player" src="https://www.youtube.com/embed/n4I0d44oBEs?autoplay=0&mute=1&rel=0" title="LAX airport live camera" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="video-placeholder" id="fallback"><div class="big">📡</div><h4>Camera unavailable on this network</h4><p>This feed is hosted by YouTube. If the network blocks YouTube, the embedded player will be blocked too. Try it on a network where YouTube is permitted.</p><button id="retry">Reload camera</button></div>
+      </div>
+      <div class="stream-meta"><div><h4>Los Angeles International Airport <span style="color:var(--cyan)">· LAX</span></h4><p>International widebodies · Terminal and runway traffic</p></div><div class="stream-actions"><button class="btn" id="openStream">Open source ↗</button><button class="btn" id="reload">Reload</button></div></div>
+    </section>
+    <div class="section-title"><h3>Explore airports</h3><span id="count">6 destinations</span></div>
+    <div class="airport-list" id="airportList">
+      <article class="airport" data-search="los angeles lax usa california international"><div class="airport-icon">🌴</div><div><div class="code">LAX · USA</div><h4>Los Angeles</h4><p>Pacific gateway · international widebodies</p><span class="tiny">FEATURED CAMERA</span></div></article>
+      <article class="airport" data-search="new york jfk usa queens international"><div class="airport-icon">🗽</div><div><div class="code">JFK · USA</div><h4>New York JFK</h4><p>Global carriers · long-haul arrivals</p><span class="tiny">CAMERA NOT ADDED</span></div></article>
+      <article class="airport" data-search="san francisco sfo usa california bay"><div class="airport-icon">🌉</div><div><div class="code">SFO · USA</div><h4>San Francisco</h4><p>Bay-side airport · transpacific traffic</p><span class="tiny">CAMERA NOT ADDED</span></div></article>
+      <article class="airport" data-search="london heathrow lhr united kingdom uk england"><div class="airport-icon">🇬🇧</div><div><div class="code">LHR · UK</div><h4>London Heathrow</h4><p>Long-haul hub · global airline mix</p><span class="tiny">CAMERA NOT ADDED</span></div></article>
+      <article class="airport" data-search="singapore changi sin asia"><div class="airport-icon">🌆</div><div><div class="code">SIN · SINGAPORE</div><h4>Singapore Changi</h4><p>Asia-Pacific hub · A350 and 787 traffic</p><span class="tiny">CAMERA NOT ADDED</span></div></article>
+      <article class="airport" data-search="tokyo haneda hnd japan"><div class="airport-icon">🗼</div><div><div class="code">HND · JAPAN</div><h4>Tokyo Haneda</h4><p>Busy domestic and international operations</p><span class="tiny">CAMERA NOT ADDED</span></div></article>
+      <div class="empty hidden" id="empty">No airports match that search. Try a city or IATA code.</div>
+    </div>
+  </main>
+  <aside>
+    <section class="panel"><div class="panel-head"><div><h3>GLOBAL AIRPORT MAP</h3><div class="sub">QUICK DISCOVERY · PREVIEW</div></div><span style="color:var(--cyan);font-size:12px">◎</span></div>
+      <div class="side-content"><div class="map" role="img" aria-label="Illustrative world map with airport markers">
+        <svg viewBox="0 0 360 235" preserveAspectRatio="none" aria-hidden="true"><g fill="#28506a" opacity=".8"><path d="M18 42 L45 26 70 32 82 49 103 47 111 65 94 78 84 96 68 91 58 109 42 89 27 76Z"/><path d="M83 112 L104 119 117 139 111 164 126 184 115 215 101 194 96 165 84 145Z"/><path d="M148 40 L174 31 192 38 200 54 187 64 170 60 158 76 144 66Z"/><path d="M164 76 L191 70 216 86 223 111 205 133 197 157 178 145 168 117 151 98Z"/><path d="M197 40 L229 26 266 34 300 49 320 67 302 82 276 73 260 90 237 78 218 66Z"/><path d="M258 103 L283 100 303 115 295 139 278 148 265 132Z"/><path d="M303 164 L329 159 342 176 327 193 306 186Z"/></g><g stroke="#4e829e" stroke-width=".7" fill="none" opacity=".65"><path d="M0 78 Q180 20 360 78"/><path d="M0 118 Q180 60 360 118"/><path d="M0 158 Q180 100 360 158"/><path d="M90 0 Q120 118 90 235"/><path d="M180 0 Q210 118 180 235"/><path d="M270 0 Q300 118 270 235"/></g></svg>
+        <span class="pin lax"></span><span class="map-label lax">LAX</span><span class="pin jfk"></span><span class="map-label jfk">JFK</span><span class="pin lhr"></span><span class="map-label lhr">LHR</span><span class="pin sin"></span><span class="map-label sin">SIN</span><span class="pin hnd"></span><span class="map-label hnd">HND</span>
+      </div><div class="map-caption"><span>● 5 hub markers</span><span>Illustrative map · not navigable yet</span></div>
+      <div class="info"><h4>📡 About the camera feed</h4><p>The featured LAX stream is embedded from YouTube. Network restrictions may block the player even when the rest of this app loads. v0.1 does not proxy or bypass blocked video services.</p></div>
+      <p class="source-note">Airport Live is an independent discovery dashboard. Camera availability and rights belong to each stream provider. Additional airport feeds will be added after their sources are checked.</p>
+      </div>
+    </section>
+  </aside>
+</div>
+<footer class="footer"><span>© 2026 AIRPORT LIVE · VERSION 0.1</span><span>Built for aviation fans, plane spotters, and curious travelers.</span></footer>
+</div>
+<script>
+const search = document.getElementById('search');
+const cards = [...document.querySelectorAll('.airport')];
+const count = document.getElementById('count');
+const empty = document.getElementById('empty');
+function filterAirports(){const q=search.value.trim().toLowerCase();let visible=0;cards.forEach(card=>{const match=card.dataset.search.includes(q);card.classList.toggle('hidden',!match);if(match)visible++});empty.classList.toggle('hidden',visible!==0);count.textContent=visible+' destination'+(visible===1?'':'s')}
+search.addEventListener('input',filterAirports);
+const player=document.getElementById('player');
+document.getElementById('openStream').addEventListener('click',()=>window.open('https://www.youtube.com/watch?v=n4I0d44oBEs','_blank','noopener,noreferrer'));
+function reloadPlayer(){player.src='https://www.youtube.com/embed/n4I0d44oBEs?autoplay=0&mute=1&rel=0&reload='+Date.now()}
+document.getElementById('reload').addEventListener('click',reloadPlayer);
+document.getElementById('retry').addEventListener('click',reloadPlayer);
+</script>
+</body>
+</html>
